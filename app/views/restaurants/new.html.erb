@@ -1,10 +1,1 @@
-<br><br>
-<%= form_for(@restaurant) do |t| %>
-  <%= t.label :name %>
-  <%= t.text_field :name %>
-  <%= t.label :address %>
-  <%= t.text_field :address %>
-  <%= t.label :category %>
-  <%= t.text_field :category %>
-  <%= t.submit %>
-<% end %>
+<%= render "form", restaurant: @restaurant %>
