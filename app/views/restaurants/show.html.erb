@@ -9,13 +9,17 @@
   <% end %>
 </ul>
 <br>
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
 <br>
 <%= link_to "Back to list", "/restaurants", class: "btn btn-primary" %>
 <br>
-<br>
 <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant), class: "btn btn-primary" %>
 <br><br>
-<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
 <br><br>
 <%= link_to "Delete #{@restaurant.name}",
             restaurant_path(@restaurant),

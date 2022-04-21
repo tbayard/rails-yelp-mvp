@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -34,6 +35,11 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
     redirect_to restaurants_path
+  end
+
+  def review
+    @restaurant = Restaurant.find(params[:id])
+    @review = @restaurant.review
   end
 
   private
